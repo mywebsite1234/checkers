@@ -38,8 +38,8 @@ async def handler(websocket):
             clients.remove(websocket)
 
 async def main():
-    # DigitalOcean assigns a port dynamically, we MUST catch it here:
-    port = int(os.environ.get("PORT", 8080))
+    port = int(os.environ.get("PORT", 8274))
+    
     print(f"Starting WebSocket server on port {port}...")
     async with websockets.serve(handler, "0.0.0.0", port):
         await asyncio.Future()
