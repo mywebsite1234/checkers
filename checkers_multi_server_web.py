@@ -25,6 +25,8 @@ async def handler(websocket):
                         sys.exit(0) 
                     elif cmd == "RESET":
                         print("Admin reset the lobby.")
+                        for client in clients:
+                            await client.send("QUIT")
                         clients.clear() 
                     continue 
 
