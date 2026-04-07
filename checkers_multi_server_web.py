@@ -4,6 +4,7 @@ import os
 import sys
 
 clients = []
+# password
 ADMIN_PASS = "supersecret99"
 
 async def handler(websocket):
